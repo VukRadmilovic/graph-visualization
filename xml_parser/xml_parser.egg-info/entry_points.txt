@@ -1,0 +1,2 @@
+[core.data_parser]
+xml = parser.xml_parser:XMLParser

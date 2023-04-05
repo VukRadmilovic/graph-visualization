@@ -1,0 +1,9 @@
+For the source data parsing plugins we chose:
+1. XML data source
+2. Wikipedia pages source (using scrapy library for parsing Wikipedia pages)
+
+For the visualization plugins we chose:
+1. Simple visualization - show nodes as circles with corresponding labels, linked with other nodes with simple lines
+2. Complex visualization - show nodes as rectangles, inside of which are listed all attributes with their values, similar to UML class diagrams
+
+Visualization will be implemented using D3.js library.

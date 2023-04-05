@@ -1,0 +1,80 @@
+<html>
+    <head>
+        {% load static %}
+        <title>ExPreSsiVeNess</title>
+        <script type="text/javascript" src="{% static 'd3.v3.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {% load custom_tags %}
+    </head>
+    <body>
+      {% if error %}
+        <script>
+          M.toast({html: '{{error}}',classes: 'rounded'})
+        </script>
+      {% endif %}
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{% url "books" %}">books.xml</a></li>
+        <li><a href="{% url "items" %}">items.xml</a></li>
+      </ul>
+      <nav class="nav-bar">
+        <div class="nav-wrapper">
+          <a href="{% url 'index' %}" class="brand-logo center">ExPreSsiVeNess</a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="{% url "simple" %}">Simple view</a></li>
+            <li><a href="{% url "complex" %}">Complex view</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">XML parser<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class = "flex-row main-section">
+        <div class = "flex-column side-content">
+          <div class = "side-tree-view border-all">
+            {{ tree_view|safe }}
+          </div>
+          <div class = "node-details border-all">
+            <b>Node info:</b>
+              <hr>
+              <div id="node-info" class="text-align-left">
+              </div>
+          </div>
+        </div>
+        <div class = "main-view border-all">
+          {{ main_view|safe }}
+          <div class = "forms flex-column">
+            <form action="{% url origin 'search' %}" method="post" class="flex-column">
+              {% csrf_token %}
+              <div class="input-field">
+                <input type="text" name="search" id="search" placeholder = "Example 'genre'">
+                <label for="search">Enter search query:</label>
+              </div>
+              <button type="submit" class="waves-effect waves-light btn center-horizontal">Search</button>
+            </form>
+            <form action="{% url origin 'filter' %}" method="post" class="flex-column">
+              {% csrf_token %}
+              <div class="input-field">
+                <input type="text" name="filter" id="filter" placeholder = "Example 'genre == Fantasy'">
+                <label for="filter">Enter filter query:</label>
+              </div>
+              <button type="submit" class="waves-effect waves-light btn center-horizontal">Filter</button>
+            </form>
+          </div>
+        </div>
+        <div class = "bird-view">
+          {{ bird_view|safe }}
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var options = {
+            coverTrigger: false
+          }
+          var elems = document.querySelectorAll('.dropdown-trigger');
+          var instances = M.Dropdown.init(elems, options);
+        });
+      </script>
+    </body>
+</html>

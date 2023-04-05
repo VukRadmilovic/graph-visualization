@@ -1,0 +1,4 @@
+simple_view==0.1
+complex_view==0.1
+xml_parser==0.1
+core==0.1

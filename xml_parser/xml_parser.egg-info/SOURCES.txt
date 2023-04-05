@@ -1,0 +1,10 @@
+setup.py
+parser/__init__.py
+parser/xml_parser.py
+xml_parser.egg-info/PKG-INFO
+xml_parser.egg-info/SOURCES.txt
+xml_parser.egg-info/dependency_links.txt
+xml_parser.egg-info/entry_points.txt
+xml_parser.egg-info/requires.txt
+xml_parser.egg-info/top_level.txt
+xml_parser.egg-info/zip-safe

@@ -1,0 +1,2 @@
+[core.extendable_visualizer]
+view_complex = visualizer_complex.complex_view_visualizer:ComplexViewVisualizer

@@ -1,0 +1,169 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+pre {
+  background-color: #f6f8fa;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.5); 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.7); 
+}
+
+.side-tree-view {
+  height: 70%;
+  border-radius: 1.25em;
+  padding: 0.5em;
+  overflow: scroll;
+}
+
+.main-view {
+  margin-left: 5px;
+  width:80%;
+  border-radius: 1.25em;
+}
+
+.forms {
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  width: 20%;
+  height: fit-content;
+  border-radius: 1.25em;
+  background: #EEEEEE;
+  padding:20px;
+}
+
+
+.main-section {
+  height: 90%;
+  width: 100%;
+  padding-top: 1%;
+}
+
+.bird-view {
+  z-index: 999;
+  width: 15%;
+  height: 20%;
+  overflow: hidden;
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  background: #EEEEEE;
+  border-radius: 1.25em;
+}
+
+
+.node-details {
+  height: 30%;
+  overflow: scroll;
+  padding: 0.5em;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-top: 5px;
+  border-radius: 1.25em;
+  text-align: center;
+}
+
+.text-align-left{
+  text-align: left;
+}
+
+.side-content {
+  width: 20%;
+  border-radius: 1.25em;
+}
+
+.nav-bar {
+  border-radius: 1.25em;
+  background-color: #00ADB5;
+  border: none;
+}
+
+
+.border-all {
+  border: 1px solid grey;
+}
+
+body {
+  overflow: hidden;
+  padding: 5px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-horizontal {
+  margin: 0 auto;
+}
+
+button {
+  width: fit-content;
+}
+
+ul, #parent {
+  list-style-type: none;
+}
+
+#parent {
+  margin: 0;
+  padding: 0;
+}
+
+.caret,.redirect {
+  cursor: pointer;
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 0.4em;
+}
+
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+.nested {
+  display: none;
+  margin-left: 1.3em;
+}
+
+.active {
+  display: block;
+}
